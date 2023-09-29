@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from robots.views import RobotCreateView
+from robots.views import RobotCreateView, DownloadExcelView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/robots/', RobotCreateView.as_view(), name='create-robot')
+    path('api/robots/', RobotCreateView.as_view(), name='create-robot'),
+    path('download_excel/', DownloadExcelView.as_view(), name='download_excel')
 ]
